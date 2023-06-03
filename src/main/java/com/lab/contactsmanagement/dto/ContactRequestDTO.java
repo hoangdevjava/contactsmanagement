@@ -18,6 +18,8 @@ import lombok.Setter;
 @Setter
 @Builder
 public class ContactRequestDTO {
+	
+	private long id;
 
 	@NotBlank(message = "{name.notempty}")
 	@NotNull(message = "{name.notnull}")

@@ -1,6 +1,7 @@
 package com.lab.contactsmanagement.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,17 +16,29 @@ public class ContactServiceImpl implements ContactService {
 
 	@Autowired
 	private ContactRepository contactRepository;
-	
+
 	@Override
-	public Contact saveContact(ContactRequestDTO contactRequest) {
-		Contact contact = Contact.builder()
-				.name(contactRequest.getName())
-				.email(contactRequest.getEmail())
-				.telephone(contactRequest.getTelephone())
-				.postalAddress(contactRequest.getPostalAddress())
-				.build();
-		
-		return contactRepository.save(contact);
+	public Contact saveContact(ContactRequestDTO contactRequest, Long contactId) {
+		Contact contactBuildData = new Contact();
+
+		if (contactId != null) {
+			contactBuildData = getContactById(contactId).get();
+			contactBuildData = Contact.builder()
+					.Id(contactId).name(contactRequest.getName())
+					.email(contactRequest.getEmail())
+					.telephone(contactRequest.getTelephone())
+					.postalAddress(contactRequest.getPostalAddress())
+					.build();
+		} else {
+			contactBuildData = Contact.builder().name(contactRequest.getName())
+					.email(contactRequest.getEmail())
+					.telephone(contactRequest.getTelephone())
+					.postalAddress(contactRequest.getPostalAddress())
+					.build();
+
+		}
+
+		return contactRepository.save(contactBuildData);
 	}
 
 	@Override
@@ -36,6 +49,21 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public void saveAllContacts(List<Contact> contacts) {
 		contactRepository.saveAll(contacts);
+	}
+
+	@Override
+	public Optional<Contact> getContactById(Long id) {
+
+		Optional<Contact> optContact = contactRepository.findById(id);
+
+		if (optContact.isPresent())
+			return optContact;
+		throw new RuntimeException("No user by Id: " + id);
+	}
+
+	@Override
+	public void deleteContact(Long id) {
+		contactRepository.deleteById(id);
 	}
 
 }

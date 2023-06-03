@@ -1,10 +1,12 @@
 package com.lab.contactsmanagement.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,16 +31,22 @@ public class ContactController {
 	public ResponseEntity<List<Contact>> getAllContacts() {
 		return ResponseEntity.ok().body(contactService.getContacts());
 	}
-
-	@PostMapping(value = { "/contact", "/contact/{id}" })
-	public ResponseEntity<Contact> saveOrUpdateContact(@PathVariable(required = false) Long contactId,
-			@RequestBody @Valid ContactRequestDTO contactRequest) {
-		if (contactId == null) 
-			return new ResponseEntity<>(contactService.saveContact(contactRequest), HttpStatus.CREATED);
-		else {
-			return new ResponseEntity<>(null, HttpStatus.OK);
-		}
-			
+	
+	@GetMapping("/contact/{id}")
+	public ResponseEntity<Contact> getContactByIdPath(@PathVariable Long id) {
+		return ResponseEntity.ok().body(contactService.getContactById(id).get());
 	}
 
+	@PostMapping({"/contact", "/contact/{id}"})
+	public ResponseEntity<Contact> saveOrUpdateContact(@PathVariable(required = false) Long id,
+			@RequestBody @Valid ContactRequestDTO contactRequest) {
+			return new ResponseEntity<>(contactService.saveContact(contactRequest, id), HttpStatus.CREATED);
+			
+	}
+	
+	@DeleteMapping("/contact/{id}")
+	public void deleteContact(@PathVariable Long id) {
+		Optional<Contact> contactOpt = contactService.getContactById(id);
+		contactService.deleteContact(contactOpt.get().getId());
+	}
 }
