@@ -19,20 +19,20 @@ import lombok.Setter;
 @Builder
 public class ContactRequestDTO {
 
-	@NotBlank(message = "Invalid Name: Empty name")
-	@NotNull(message = "Invalid Name: Name is NULL")
-	@Size(min = 3, max = 30, message = "Invalid Name: Exceeds 30 characters")
+	@NotBlank(message = "{name.notempty}")
+	@NotNull(message = "{name.notnull}")
+	@Size(min = 3, max = 30, message = "{name.invalidlength}")
 	private String name;
 
-	@Email(message = "Invalid email")
+	@Email(message = "{email.invalid}")
 	private String email;
 
-	@NotBlank(message = "Invalid Phone number: empty number")
-	@NotNull(message = "Invalid Phone number: Number is NULL")
-    @Pattern(regexp = "^\\d{10}$", message = "Invalid phone number")
+	@NotBlank(message = "{telephone.notempty}")
+	@NotNull(message = "{telephone.notnull}")
+    @Pattern(regexp = "^\\d{10}$", message = "{telephone.invalid}")
 	private String telephone;
 
-	@NotBlank(message = "Invalid Postal Address: empty number")
-	@NotNull(message = "Invalid Postal Address: Postal Address is NULL")
+	@NotBlank(message = "{telephone.notempty}")
+	@NotNull(message = "{telephone.notnull}")
 	private String postalAddress;
 }
