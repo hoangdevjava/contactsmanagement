@@ -14,7 +14,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.lab.contactsmanagement.exceptions.UserNotFoundException;
+import com.lab.contactsmanagement.exceptions.ContactNotFoundException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -25,8 +25,8 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<>(getErrorsMap(errors), new HttpHeaders(), HttpStatus.BAD_REQUEST);
 	}
 
-	@ExceptionHandler(UserNotFoundException.class)
-	public ResponseEntity<Map<String, List<String>>> handleNotFoundException(UserNotFoundException ex) {
+	@ExceptionHandler(ContactNotFoundException.class)
+	public ResponseEntity<Map<String, List<String>>> handleNotFoundException(ContactNotFoundException ex) {
 		List<String> errors = Collections.singletonList(ex.getMessage());
 		return new ResponseEntity<>(getErrorsMap(errors), new HttpHeaders(), HttpStatus.NOT_FOUND);
 	}
