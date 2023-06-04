@@ -1,6 +1,5 @@
 package com.lab.contactsmanagement.dto;
 
-
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -18,7 +17,7 @@ import lombok.Setter;
 @Setter
 @Builder
 public class ContactRequestDTO {
-	
+
 	private long id;
 
 	@NotBlank(message = "{name.notempty}")
@@ -31,10 +30,11 @@ public class ContactRequestDTO {
 
 	@NotBlank(message = "{telephone.notempty}")
 	@NotNull(message = "{telephone.notnull}")
-    @Pattern(regexp = "^\\d{10}$", message = "{telephone.invalid}")
+	@Pattern(regexp = "^\\d{10}$", message = "{telephone.invalid}")
 	private String telephone;
 
 	@NotBlank(message = "{telephone.notempty}")
 	@NotNull(message = "{telephone.notnull}")
 	private String postalAddress;
+
 }

@@ -55,11 +55,6 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	@Override
-	public List<Contact> getContacts() {
-		return null;
-	}
-
-	@Override
 	public void saveAllContacts(List<Contact> contacts) {
 		contactRepository.saveAll(contacts);
 	}

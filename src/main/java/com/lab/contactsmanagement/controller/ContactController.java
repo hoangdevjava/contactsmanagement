@@ -70,7 +70,8 @@ public class ContactController {
 	public ResponseEntity<Contact> saveOrUpdateContact(@PathVariable(required = false) Long id,
 			@RequestBody @Valid ContactRequestDTO contactRequest) {
 		LOGGER.info("ContactController | saveOrUpdateContact is started");
-			return new ResponseEntity<>(contactService.saveContact(contactRequest, id), HttpStatus.CREATED);
+		LOGGER.info("ContactController | contactRequest is" + contactRequest);
+		return new ResponseEntity<>(contactService.saveContact(contactRequest, id), HttpStatus.CREATED);
 			
 	}
 	
