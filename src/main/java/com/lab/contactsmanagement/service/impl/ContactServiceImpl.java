@@ -32,25 +32,26 @@ public class ContactServiceImpl implements ContactService {
 		Contact contactBuildData = new Contact();
 
 		if (contactId != null) {
-			//Create Contact
-			contactBuildData = getContactById(contactId);
-			contactBuildData = Contact.builder()
-					.Id(contactId).name(contactRequest.getName())
-					.email(contactRequest.getEmail())
-					.telephone(contactRequest.getTelephone())
-					.postalAddress(contactRequest.getPostalAddress())
-					.build();
-		} else {
 			//Update Contact
-			contactBuildData = Contact.builder().name(contactRequest.getName())
-					.email(contactRequest.getEmail())
-					.telephone(contactRequest.getTelephone())
-					.postalAddress(contactRequest.getPostalAddress())
-					.build();
-
+			// Check exist contact
+			contactBuildData = getContactById(contactId);
+			buildContactData(contactBuildData, contactRequest, contactId);
+		} else {
+			//Create Contact
+			contactBuildData = buildContactData(contactBuildData, contactRequest, contactId);
 		}
 
 		return contactRepository.save(contactBuildData);
+	}
+	
+	private Contact buildContactData(Contact contactBuildData, ContactRequestDTO contactRequest, Long contactId) {
+		return contactBuildData = Contact.builder().name(contactRequest.getName())
+				.Id(contactId != null ? contactId : Long.valueOf(0))
+				.email(contactRequest.getEmail())
+				.telephone(contactRequest.getTelephone())
+				.postalAddress(contactRequest.getPostalAddress())
+				.build();
+		
 	}
 
 	@Override

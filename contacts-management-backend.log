@@ -1,71 +1,7 @@
-2023-06-04T14:08:50.880+07:00  INFO 17400 --- [restartedMain] c.l.c.ContactsmanagementApplication      : Starting ContactsmanagementApplication using Java 17.0.1 with PID 17400 (D:\LabTest\contactsmanagement\bin\main started by Nguyen Hoang in D:\LabTest\contactsmanagement)
-2023-06-04T14:08:50.880+07:00  INFO 17400 --- [restartedMain] c.l.c.ContactsmanagementApplication      : No active profile set, falling back to 1 default profile: "default"
-2023-06-04T14:08:50.950+07:00  INFO 17400 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-06-04T14:08:50.954+07:00  INFO 17400 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 1 JPA repository interfaces.
-2023-06-04T14:08:51.016+07:00  INFO 17400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-06-04T14:08:51.016+07:00  INFO 17400 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-06-04T14:08:51.017+07:00  INFO 17400 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
-2023-06-04T14:08:51.029+07:00  INFO 17400 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-06-04T14:08:51.029+07:00  INFO 17400 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 148 ms
-2023-06-04T14:08:51.037+07:00  INFO 17400 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
-2023-06-04T14:08:51.038+07:00  INFO 17400 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-10 - Added connection conn90: url=jdbc:h2:mem:testdb user=SA
-2023-06-04T14:08:51.038+07:00  INFO 17400 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
-2023-06-04T14:08:51.038+07:00  INFO 17400 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2023-06-04T14:08:51.049+07:00  INFO 17400 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-06-04T14:08:51.052+07:00  INFO 17400 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-06-04T14:08:51.052+07:00  INFO 17400 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-06-04T14:08:51.053+07:00  INFO 17400 --- [restartedMain] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.H2Dialect, version: 2.1.214
-2023-06-04T14:08:51.056+07:00  INFO 17400 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-06-04T14:08:51.068+07:00  INFO 17400 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-06-04T14:08:51.070+07:00  INFO 17400 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-06-04T14:08:51.088+07:00  WARN 17400 --- [restartedMain] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.lab.contactsmanagement.repository.ContactRepository
-2023-06-04T14:08:51.100+07:00  WARN 17400 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-06-04T14:08:51.146+07:00  INFO 17400 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-06-04T14:08:51.153+07:00  INFO 17400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-06-04T14:08:51.155+07:00  INFO 17400 --- [restartedMain] c.l.c.ContactsmanagementApplication      : Started ContactsmanagementApplication in 0.315 seconds (process running for 413.853)
-2023-06-04T14:08:51.162+07:00  INFO 17400 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2023-06-04T14:08:55.003+07:00  INFO 17400 --- [RMI TCP Connection(28)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2023-06-04T14:08:55.018+07:00  INFO 17400 --- [RMI TCP Connection(28)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-06-04T14:08:55.022+07:00  INFO 17400 --- [RMI TCP Connection(28)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-06-04T14:08:55.439+07:00  WARN 17400 --- [RMI TCP Connection(28)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
-2023-06-04T14:08:55.439+07:00  INFO 17400 --- [RMI TCP Connection(28)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
-2023-06-04T14:08:55.556+07:00  INFO 17400 --- [RMI TCP Connection(28)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
-2023-06-04T14:09:01.465+07:00  INFO 4380 --- [restartedMain] c.l.c.ContactsmanagementApplication      : Starting ContactsmanagementApplication using Java 17.0.1 with PID 4380 (D:\LabTest\contactsmanagement\bin\main started by Nguyen Hoang in D:\LabTest\contactsmanagement)
-2023-06-04T14:09:01.468+07:00  INFO 4380 --- [restartedMain] c.l.c.ContactsmanagementApplication      : No active profile set, falling back to 1 default profile: "default"
-2023-06-04T14:09:01.500+07:00  INFO 4380 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-06-04T14:09:01.500+07:00  INFO 4380 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-06-04T14:09:01.937+07:00  INFO 4380 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-06-04T14:09:01.976+07:00  INFO 4380 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interfaces.
-2023-06-04T14:09:02.443+07:00  INFO 4380 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-06-04T14:09:02.451+07:00  INFO 4380 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-06-04T14:09:02.452+07:00  INFO 4380 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
-2023-06-04T14:09:02.509+07:00  INFO 4380 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-06-04T14:09:02.509+07:00  INFO 4380 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1009 ms
-2023-06-04T14:09:02.531+07:00  INFO 4380 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-06-04T14:09:02.689+07:00  INFO 4380 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2023-06-04T14:09:02.690+07:00  INFO 4380 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-06-04T14:09:02.699+07:00  INFO 4380 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2023-06-04T14:09:02.788+07:00  INFO 4380 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-06-04T14:09:02.853+07:00  INFO 4380 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
-2023-06-04T14:09:02.856+07:00  INFO 4380 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-06-04T14:09:02.988+07:00  INFO 4380 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-06-04T14:09:03.116+07:00  INFO 4380 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-06-04T14:09:03.150+07:00  INFO 4380 --- [restartedMain] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.H2Dialect, version: 2.1.214
-2023-06-04T14:09:03.301+07:00  INFO 4380 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-06-04T14:09:03.775+07:00  INFO 4380 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-06-04T14:09:03.824+07:00  INFO 4380 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-06-04T14:09:03.967+07:00  INFO 4380 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-06-04T14:09:03.976+07:00  WARN 4380 --- [restartedMain] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.lab.contactsmanagement.repository.ContactRepository
-2023-06-04T14:09:04.041+07:00  WARN 4380 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-06-04T14:09:04.243+07:00  INFO 4380 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-06-04T14:09:04.275+07:00  INFO 4380 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-06-04T14:09:04.282+07:00  INFO 4380 --- [restartedMain] c.l.c.ContactsmanagementApplication      : Started ContactsmanagementApplication in 3.109 seconds (process running for 3.727)
-2023-06-04T14:09:16.735+07:00  INFO 4380 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-06-04T14:09:16.735+07:00  INFO 4380 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-06-04T14:09:16.737+07:00  INFO 4380 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-06-04T14:09:16.749+07:00  INFO 4380 --- [http-nio-8080-exec-2] c.l.c.config.LoggingInterceptor          : Pre Handle method is Calling
-2023-06-04T14:09:16.759+07:00  WARN 4380 --- [http-nio-8080-exec-2] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.lab.contactsmanagement.controller.ContactController
-2023-06-04T14:09:16.762+07:00  INFO 4380 --- [http-nio-8080-exec-2] c.l.c.controller.ContactController       : ContactController | getContactByIdPath is started
-2023-06-04T14:09:16.794+07:00 ERROR 4380 --- [http-nio-8080-exec-2] c.l.c.controller.ContactController       : Could not find any category with ID: No value present
-2023-06-04T14:09:16.824+07:00  WARN 4380 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.lab.contactsmanagement.exceptions.ContactNotFoundException: Could not find any category with ID 789]
-2023-06-04T14:09:16.824+07:00  INFO 4380 --- [http-nio-8080-exec-2] c.l.c.config.LoggingInterceptor          : Request and Response is completed
+2023-06-04T14:40:49.701+07:00  INFO 19380 --- [RMI TCP Connection(34)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-06-04T14:40:49.716+07:00  INFO 19380 --- [RMI TCP Connection(34)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-06-04T14:40:49.717+07:00  INFO 19380 --- [RMI TCP Connection(34)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-06-04T14:40:49.720+07:00  INFO 19380 --- [RMI TCP Connection(34)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-04T14:40:50.128+07:00  WARN 19380 --- [RMI TCP Connection(34)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-06-04T14:40:50.139+07:00  INFO 19380 --- [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2023-06-04T14:40:50.245+07:00  INFO 19380 --- [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
