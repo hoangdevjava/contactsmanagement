@@ -1,7 +1,6 @@
 package com.lab.contactsmanagement.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,13 +31,7 @@ public class ContactController {
 
 	@Autowired
 	private ContactService contactService;
-	
 
-//	@GetMapping("/contact")
-//	public ResponseEntity<List<Contact>> getAllContacts() {
-//		return ResponseEntity.ok().body(contactService.getContacts());
-//	}
-	
 	@GetMapping("/contact")
 	public ResponseEntity<List<Contact>> listFirstPage(String sortDir) {
 		LOGGER.info("ContactController | listFirstPage is started");
@@ -52,7 +45,7 @@ public class ContactController {
 	/* This API using for basic search and pagination by lastname/firstname but I think the annotation @Query with parameters on H2 database not working correctly .
 		* I tried to hard value on method with parameter keyword String(Ex: contactRepository.findByNameContaining("Hoang", pageable)) then the result output expected.
 		* But when I using data from RequestParam (ex: contactRepository.findByNameContaining(keyword, pageable)) it's not working.
-		* Solution: I will set up driver MySQL database for testing later. I take time when investigate with H2 at the moment. Sorry about that! :).
+		* Solution: I will set up driver MySQL database to testing later. I take time when investigate with H2 at the moment. Sorry about that! :).
 	 */
 	@GetMapping("/contact/page/{pageNum}") 
 	public ResponseEntity<List<Contact>> listByPage(@PathVariable(name = "pageNum") int pageNum, 
@@ -69,18 +62,21 @@ public class ContactController {
 	
 	@GetMapping("/contact/{id}")
 	public ResponseEntity<Contact> getContactByIdPath(@PathVariable Long id) {
+		LOGGER.info("ContactController | getContactByIdPath is started");
 		return ResponseEntity.ok().body(contactService.getContactById(id));
 	}
 
 	@PostMapping({"/contact", "/contact/{id}"})
 	public ResponseEntity<Contact> saveOrUpdateContact(@PathVariable(required = false) Long id,
 			@RequestBody @Valid ContactRequestDTO contactRequest) {
+		LOGGER.info("ContactController | saveOrUpdateContact is started");
 			return new ResponseEntity<>(contactService.saveContact(contactRequest, id), HttpStatus.CREATED);
 			
 	}
 	
 	@DeleteMapping("/contact/{id}")
 	public void deleteContact(@PathVariable Long id) {
+		LOGGER.info("ContactController | deleteContact is started");
 		Contact contactOpt = contactService.getContactById(id);
 		contactService.deleteContact(contactOpt.getId());
 	}
